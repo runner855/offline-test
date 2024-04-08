@@ -6,7 +6,7 @@ import { NavBar } from "./Components/NavBar/NavBar";
 export const App = () => {
   useEffect(() => {
     ApiCall.get(`/photos/?client_id=${process.env.REACT_APP_API_KEY}`, {}).then(
-      (res) => console.log(res)
+      (res) => console.log(res.data)
     );
   });
   return (

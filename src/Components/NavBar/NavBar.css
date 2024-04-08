@@ -1,0 +1,23 @@
+.navbar_container {
+  list-style: none;
+  overflow: hidden;
+  background-color: #819ddd;
+  margin: 0;
+  padding: 0;
+  border-bottom: solid 0.2em black;
+}
+
+.navbar_container a {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  margin-left: 5px;
+  font-weight: 800;
+  font-size: 20px;
+  text-decoration: none;
+  color: black !important;
+}
+
+.navbar_container a :hover {
+  cursor: pointer;
+}
