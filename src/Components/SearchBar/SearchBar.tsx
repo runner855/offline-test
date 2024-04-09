@@ -1,33 +1,32 @@
 import React from "react";
-import "../SearchBar/SearchBar.css";
+import { AudioOutlined } from "@ant-design/icons";
+import { Input, Space } from "antd";
+import type { SearchProps } from "antd/es/input/Search";
 
-type SearchBarProps = {
-  searchBarValue: string;
-  setSearchBarValue: (text: string) => void;
-  handleSubmit: (e: React.MouseEvent<HTMLButtonElement>) => void;
-};
+const { Search } = Input;
 
-export const SearchBar = ({
-  handleSubmit,
-  setSearchBarValue,
-  searchBarValue,
-}: SearchBarProps) => {
-  return (
-    <div className="search_bar">
-      <div className="form_container">
-        <input
-          type="text"
-          placeholder="Search Images Here!!"
-          required
-          onChange={(e) => setSearchBarValue(e.target.value)}
-          value={searchBarValue}
-        />
-        <button
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleSubmit(e)}
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  );
-};
+const suffix = (
+  <AudioOutlined
+    style={{
+      fontSize: 16,
+      color: "#1677ff",
+    }}
+  />
+);
+
+const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
+  console.log(info?.source, value);
+
+const App: React.FC = () => (
+  <Space direction="vertical">
+    <Search
+      placeholder="input search text"
+      allowClear
+      enterButton="Search"
+      size="large"
+      onSearch={onSearch}
+    />
+  </Space>
+);
+
+export default App;

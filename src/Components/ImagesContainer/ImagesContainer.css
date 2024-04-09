@@ -1,10 +1,23 @@
 img {
-  width: 20em;
-  height: 15em;
+  width: 13em;
+  height: 13em;
 }
 
 .images_container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  margin-top: 50em;
+}
+
+.single_image {
+  margin: 1em;
+  margin-top: 4em;
+  border-radius: 0.6em;
+}
+
+.search_bar {
+  margin-top: 2em;
 }
